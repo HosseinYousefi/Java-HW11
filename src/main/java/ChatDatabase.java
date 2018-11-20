@@ -19,7 +19,7 @@ public class ChatDatabase {
         mongoClient = new MongoClient();
         mongoDatabase = mongoClient.getDatabase(DATABASE_NAME);
         mongoCollection = mongoDatabase.getCollection(COLLECTION_NAME);
-        mongoCollection.drop(); // for testing
+        mongoCollection.drop(); // for testing with a new db every time
     }
 
     public FindIterable<Document> getChats() {

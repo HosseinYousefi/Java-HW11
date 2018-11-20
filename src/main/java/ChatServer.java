@@ -25,7 +25,7 @@ public class ChatServer {
             chatDatabase.addChat(user, message);
         System.out.println("[" + user + "] " + message);
         for (ChatHandler chat: chats) {
-            chat.sendMessage(user, message);
+            chat.sendMessage(user, message, flag);
         }
     }
 

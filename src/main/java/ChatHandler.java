@@ -44,9 +44,9 @@ public class ChatHandler extends Thread {
         server.chatDisconnected(this);
     }
 
-    public void sendMessage(String user, String message) {
+    public void sendMessage(String user, String message, boolean flag) {
         try {
-            out.writeUTF(user + ": " + message);
+            out.writeUTF(user + (flag? ": ": " ") + message);
             out.flush();
         } catch (IOException e) {
             System.out.println("Connection to user is lost");
